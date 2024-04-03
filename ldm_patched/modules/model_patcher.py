@@ -104,6 +104,8 @@ class ModelPatcher:
         self.set_model_patch(patch, "attn2_output_patch")
 
     def set_model_input_block_patch(self, patch):
+        print("Patching model with patch:")
+        print(patch)
         self.set_model_patch(patch, "input_block_patch")
 
     def set_model_input_block_patch_after_skip(self, patch):
