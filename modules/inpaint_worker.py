@@ -208,6 +208,8 @@ class InpaintWorker:
         inpaint_head_feature = inpaint_head_model(feed)
 
         def input_block_patch(h, transformer_options):
+            print("TRANSFORMER OPTIONS:")
+            print(transformer_options)
             if transformer_options["block"][1] == 0:
                 h = h + inpaint_head_feature.to(h)
             return h
