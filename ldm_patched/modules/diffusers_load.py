@@ -17,9 +17,12 @@ def load_diffusers(model_path, output_vae=True, output_clip=True, embedding_dire
     vae_path = first_file(os.path.join(model_path, "vae"), diffusion_model_names)
 
     text_encoder_model_names = ["model.fp16.safetensors", "model.safetensors", "pytorch_model.fp16.bin", "pytorch_model.bin"]
+    
     text_encoder1_path = first_file(os.path.join(model_path, "text_encoder"), text_encoder_model_names)
+    print("Text encoder 1 path: ", texct_encoder1_path)
     text_encoder2_path = first_file(os.path.join(model_path, "text_encoder_2"), text_encoder_model_names)
-
+    print("Text encoder 2 path: ", texct_encoder2_path)
+    
     text_encoder_paths = [text_encoder1_path]
     if text_encoder2_path is not None:
         text_encoder_paths.append(text_encoder2_path)
