@@ -150,6 +150,8 @@ def clip_encode_single(clip, text, verbose=False):
     clip.fcs_cond_cache[text] = result
     if verbose:
         print(f'[CLIP Encoded] {text}')
+    print(result)
+    print(result.shape)
     return result
 
 
