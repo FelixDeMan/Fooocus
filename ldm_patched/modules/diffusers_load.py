@@ -10,6 +10,8 @@ def first_file(path, filenames):
     return None
 
 def load_diffusers(model_path, output_vae=True, output_clip=True, embedding_directory=None):
+    print("LOADING DIFFUSERS")
+    print(f"MODEL PATH = {model_path}")
     diffusion_model_names = ["diffusion_pytorch_model.fp16.safetensors", "diffusion_pytorch_model.safetensors", "diffusion_pytorch_model.fp16.bin", "diffusion_pytorch_model.bin"]
     unet_path = first_file(os.path.join(model_path, "unet"), diffusion_model_names)
     vae_path = first_file(os.path.join(model_path, "vae"), diffusion_model_names)
