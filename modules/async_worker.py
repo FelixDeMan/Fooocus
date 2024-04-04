@@ -491,6 +491,7 @@ def worker():
             for i, t in enumerate(tasks):
                 progressbar(async_task, 7, f'Encoding positive #{i + 1} ...')
                 t['c'] = pipeline.clip_encode(texts=t['positive'], pool_top_k=t['positive_top_k'])
+                print(t['c'])
 
             for i, t in enumerate(tasks):
                 if abs(float(cfg_scale) - 1.0) < 1e-4:
