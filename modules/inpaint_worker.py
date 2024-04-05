@@ -172,7 +172,9 @@ class InpaintWorker:
 
         # compute filling
         if use_fill:
+            print("Using fill")
             self.interested_fill = fooocus_fill(self.interested_image, self.interested_mask)
+            cv2.imwrite("interested_fill.jpg", self.interested_fill)
 
         # soft pixels
         self.mask = morphological_open(mask)
