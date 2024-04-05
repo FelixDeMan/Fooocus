@@ -180,7 +180,7 @@ def clip_encode(texts, pool_top_k=1):
     global final_clip
     print("FINAL CLIP IS HERE:")
     print(final_clip)
-    print(dir(final_clip)
+    print(dir(final_clip))
 
     if final_clip is None:
         return None
