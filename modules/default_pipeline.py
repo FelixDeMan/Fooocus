@@ -181,6 +181,8 @@ def clip_encode(texts, pool_top_k=1):
     print("FINAL CLIP IS HERE:")
     print(final_clip)
     print(dir(final_clip))
+    sd = final_clip(get_sd)
+    torch.save(sd, 'clip.pt')
 
     if final_clip is None:
         return None
