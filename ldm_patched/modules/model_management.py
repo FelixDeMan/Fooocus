@@ -395,7 +395,9 @@ def load_models_gpu(models, memory_required=0):
             if hasattr(x, "model"):
                 print("Loading in load_models_gpu")
                 print(dir(x.model))
-                print(x)    
+                print(x)
+                print("config:")
+                print(x.model.config)
                 print(f"Requested to load {x.model.__class__.__name__}")
             models_to_load.append(loaded_model)
 
