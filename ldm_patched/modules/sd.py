@@ -53,6 +53,7 @@ def load_clip_weights(model, sd):
 
 
 def load_lora_for_models(model, clip, lora, strength_model, strength_clip):
+    print("lora = ", lora)
     key_map = {}
     if model is not None:
         key_map = ldm_patched.modules.lora.model_lora_keys_unet(model.model, key_map)
