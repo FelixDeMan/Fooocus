@@ -181,8 +181,12 @@ def clip_encode(texts, pool_top_k=1):
     print("FINAL CLIP IS HERE:")
     print(final_clip)
     print(dir(final_clip))
-    sd = final_clip(get_sd)
-    torch.save(sd, 'clip.pt')
+    try:
+        sd = final_clip(get_sd())
+        torch.save(sd, 'clip.pt')
+    except Exception as e:
+        print(e)
+        torch.save(final_clip.state_dict(), 'clip.pt')
 
     if final_clip is None:
         return None
