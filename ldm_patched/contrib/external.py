@@ -610,10 +610,12 @@ class LoraLoader:
     CATEGORY = "loaders"
 
     def load_lora(self, model, clip, lora_name, strength_model, strength_clip):
+       
         if strength_model == 0 and strength_clip == 0:
             return (model, clip)
 
         lora_path = ldm_patched.utils.path_utils.get_full_path("loras", lora_name)
+         print("lora path: ", lora_path) 
         lora = None
         if self.loaded_lora is not None:
             if self.loaded_lora[0] == lora_path:
