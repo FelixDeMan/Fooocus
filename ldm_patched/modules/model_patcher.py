@@ -215,6 +215,7 @@ class ModelPatcher:
         return self.model
 
     def calculate_weight(self, patches, weight, key):
+        
         for p in patches:
             alpha = p[0]
             v = p[1]
@@ -231,6 +232,7 @@ class ModelPatcher:
             elif len(v) == 2:
                 patch_type = v[0]
                 v = v[1]
+            print("Patch type: ", patch_type)
 
             if patch_type == "diff":
                 w1 = v[0]
