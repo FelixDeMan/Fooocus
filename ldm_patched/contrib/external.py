@@ -844,6 +844,7 @@ class CLIPLoader:
 
     def load_clip(self, clip_name):
         clip_path = ldm_patched.utils.path_utils.get_full_path("clip", clip_name)
+        print(clip_path)
         clip = ldm_patched.modules.sd.load_clip(ckpt_paths=[clip_path], embedding_directory=ldm_patched.utils.path_utils.get_folder_paths("embeddings"))
         return (clip,)
 
