@@ -168,6 +168,7 @@ class InpaintWorker:
 
         # process mask
         self.interested_mask = up255(resample_image(self.interested_mask, W, H), t=127)
+        cv2.imwrite("interested_mask.jpg", self.interested_mask)
 
         # compute filling
         if use_fill:
