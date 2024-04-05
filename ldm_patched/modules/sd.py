@@ -446,6 +446,7 @@ def load_checkpoint_guess_config(ckpt_path, output_vae=True, output_clip=True, o
         pass
 
     model_config = model_detection.model_config_from_unet(sd, "model.diffusion_model.", unet_dtype)
+    print("MODEL CONFIG: ", model_config)
     model_config.set_manual_cast(manual_cast_dtype)
 
     if model_config is None:
@@ -469,6 +470,8 @@ def load_checkpoint_guess_config(ckpt_path, output_vae=True, output_clip=True, o
     if output_clip:
         w = WeightsLoader()
         clip_target = model_config.clip_target()
+
+        print("CLIP TARGET: ", clip_target)
         if clip_target is not None:
             clip = CLIP(clip_target, embedding_directory=embedding_directory)
             w.cond_stage_model = clip.cond_stage_model
