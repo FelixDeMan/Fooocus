@@ -615,7 +615,7 @@ class LoraLoader:
             return (model, clip)
 
         lora_path = ldm_patched.utils.path_utils.get_full_path("loras", lora_name)
-         print("lora path: ", lora_path) 
+        print("lora path: ", lora_path) 
         lora = None
         if self.loaded_lora is not None:
             if self.loaded_lora[0] == lora_path:
