@@ -32,6 +32,8 @@ class ClipVisionModel():
     def __init__(self, json_config):
         with open(json_config) as f:
             config = json.load(f)
+            print("Clip config: ")
+            print(config)
 
         self.load_device = ldm_patched.modules.model_management.text_encoder_device()
         offload_device = ldm_patched.modules.model_management.text_encoder_offload_device()
@@ -95,7 +97,8 @@ def load_clipvision_from_sd(sd, prefix="", convert_keys=False):
         json_config = os.path.join(os.path.dirname(os.path.realpath(__file__)), "clip_vision_config_vitl.json")
     else:
         return None
-
+    print("clip json config:")
+    print(json_config)
     clip = ClipVisionModel(json_config)
     m, u = clip.load_sd(sd)
     if len(m) > 0:
