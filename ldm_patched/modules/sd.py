@@ -431,6 +431,9 @@ def load_checkpoint(config_path=None, ckpt_path=None, output_vae=True, output_cl
     return (ldm_patched.modules.model_patcher.ModelPatcher(model, load_device=model_management.get_torch_device(), offload_device=offload_device), clip, vae)
 
 def load_checkpoint_guess_config(ckpt_path, output_vae=True, output_clip=True, output_clipvision=False, embedding_directory=None, output_model=True):
+    print("Load checkpoint_guess_config function. config path -> ckpt_path")
+
+    print(ckpt_path)
     sd = ldm_patched.modules.utils.load_torch_file(ckpt_path)
     sd_keys = sd.keys()
     clip = None
