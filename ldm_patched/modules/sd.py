@@ -344,6 +344,9 @@ def load_gligen(ckpt_path):
     return ldm_patched.modules.model_patcher.ModelPatcher(model, load_device=model_management.get_torch_device(), offload_device=model_management.unet_offload_device())
 
 def load_checkpoint(config_path=None, ckpt_path=None, output_vae=True, output_clip=True, embedding_directory=None, state_dict=None, config=None):
+    print("Load checkpoint function. config path -> ckpt_path")
+    print(config_path)
+    print(ckpt_path)
     #TODO: this function is a mess and should be removed eventually
     if config is None:
         with open(config_path, 'r') as stream:
