@@ -813,7 +813,7 @@ def worker():
                             positive_cond, negative_cond = core.apply_controlnet(
                                 positive_cond, negative_cond,
                                 pipeline.loaded_ControlNets[cn_path], cn_img, cn_weight, 0, cn_stop)
-
+                print(initial_latent)
                 imgs = pipeline.process_diffusion(
                     positive_cond=positive_cond,
                     negative_cond=negative_cond,
