@@ -202,6 +202,7 @@ class InpaintWorker:
             sd = torch.load(inpaint_head_model_path, map_location='cpu')
             print(sd.keys)
             inpaint_head_model.load_state_dict(sd)
+        torch.save(inpaint_latent_mask, "inpaint_latent_mask.pt")
         torch.save(model.model.process_latent_in(inpaint_latent), "processed_latent_in_patch.pt")
         torch.save(inpaint_latent, "unprocessed_latent_in_patch.pt")
         feed = torch.cat([
